@@ -1,0 +1,18 @@
+#including all files
+require_relative 'products'
+require_relative 'delivery'
+require_relative 'offers'
+
+class Basket
+  def initialize
+    @items = []
+  end
+
+  def add(product_code)
+    @items << product_code
+  end
+
+  def subtotal
+    @items.sum { |code| PRODUCTS[code][:price] }
+  end
+end
