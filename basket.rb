@@ -18,7 +18,7 @@ class Basket
 
   def total
     sub = subtotal
-    discount = red_widget_offer(@items)
+    discount = red_widget_discount(@items)
     after_discount = sub - discount
     total = after_discount + delivery_charge(after_discount)
     puts "The total is $#{'%.2f' % total}"
